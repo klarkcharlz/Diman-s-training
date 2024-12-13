@@ -1,0 +1,13 @@
+git clone
+git status
+git diff
+git log
+git pull
+git push
+git add
+git commit
+git ammend
+git merge
+git rebase
+git checkout
+git branch

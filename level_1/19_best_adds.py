@@ -12,6 +12,9 @@
 - датакласс
 - компрехенсионс
 """
+from dataclasses import dataclass
+from enum import Enum
+from dataclasses import dataclass
 
 
 # для изменяемых типов данных в значениях по умолчанию создается ссылка
@@ -81,6 +84,64 @@ def test1():
 
 
 test1()
-test1()
-test1()
+test1.__call__()
+test1.__call__()
 
+
+def test2():
+    pass
+
+
+test2.count = 0
+test2()
+test2.count += 1
+print(test2.count)
+
+
+class Port(int, Enum):
+    default_port = 5001
+    port2 = 5001
+
+
+# Почему он может быть полезен и когда его использовать?
+# что есть полезного у датакласса
+# Pydantic
+@dataclass
+class Settings:
+    port: Port
+    address: str
+
+
+data = {
+    "port": 5000,
+    "address": "192.168.0.127"
+}
+
+settings = Settings(**data)
+print(settings.port)
+
+
+# компрехенсионс/comprehension/включения/генераторные выражения
+l = [
+    # "a" if not i % 4 else "b"
+    i * j
+    for i in range(10) for j in range(100)
+    if not i % 2
+]
+
+d = {
+    key: value
+    for key, value in enumerate(range(5), start=20)
+}
+
+s = {num for num in range(10)}
+print(s)
+print(l)
+print(d)
+
+# ЭТО ГЕНЕРАТОР
+gen = (num for num in range(10))
+print(gen)
+print(next(gen))
+print(next(gen))
+print(next(gen))

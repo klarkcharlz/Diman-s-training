@@ -1,5 +1,9 @@
 import asyncio
 
+# Вот это выучи
+from asyncio import Queue
+from asyncio import Lock, Semaphore, BoundedSemaphore, Event
+
 
 queue = asyncio.Queue()
 lock = asyncio.Lock()  # мьютекс семафор

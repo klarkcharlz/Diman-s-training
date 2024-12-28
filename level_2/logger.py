@@ -1,6 +1,9 @@
 """
 Дзен Пайтона
 import this
+
+LOGURU - альтернатива
+
 """
 # import this
 import logging
@@ -35,7 +38,11 @@ def setup_error_logger():
     console_handler.setFormatter(error_formatter)
 
     file_handler = TimedRotatingFileHandler(
-        "error_logs.log", when="midnight", interval=1, backupCount=20, encoding="utf-8"
+        "error_logs.log",
+        when="midnight",
+        interval=1,
+        backupCount=20,
+        encoding="utf-8"
     )
     file_handler.setFormatter(error_formatter)
 
@@ -53,5 +60,5 @@ if __name__ == "__main__":
     debug_logger.info("Информационное сообщение.")
     debug_logger.warning("Это предупреждение.")
 
-    # error_logger.error("Ошибка: что-то пошло не так!")
-    # error_logger.critical("Критическая ошибка!")
+    error_logger.error("Ошибка: что-то пошло не так!")
+    error_logger.critical("Критическая ошибка!")

@@ -1,3 +1,7 @@
+"""
+Swagger и OPENAPI.
+"""
+
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
@@ -8,6 +12,7 @@ from typing import List
 import uvicorn
 # ASGI - Uvicorn
 # WSGI - Gunicorn
+
 
 DATABASE_URL = "sqlite+aiosqlite:////database/test.db"
 # DATABASE_URL = "sqlite+aiosqlite:///./database/test.db"

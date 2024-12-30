@@ -4,3 +4,6 @@ sqlalchemy[asyncio]
 aiosqlite
 pydantic
 faker
+passlib
+pyjwt
+bcrypt

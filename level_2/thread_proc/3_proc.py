@@ -6,6 +6,8 @@ RabbitMQ и Apache Kafka.
 бэк 1
 rabbit.send(back2, [1, 2, 3,])
 rabbit.get(back2)
+
+что можно передавать между процессами?
 """
 
 
